@@ -9,7 +9,7 @@
         packages.nvim = with pkgs.vimPlugins; {
           start = [
             vim-nix
-            gruvbox
+            gruvbox-community
           ];
         };
       };
