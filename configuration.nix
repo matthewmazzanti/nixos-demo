@@ -39,7 +39,7 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    permitRootLogin = false;
+    permitRootLogin = "no";
     passwordAuthentication = false;
     kbdInteractiveAuthentication = false;
   };
