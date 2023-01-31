@@ -4,12 +4,14 @@
       enable = true;
       defaultEditor = true;
       vimAlias = true;
-      customRC = builtins.readFile ./init.vim; 
-      packages.nvim = with pkgs.vimPlugins; {
-        start = [
-          vim-nix
-          gruvbox
-        ];
+      configure = {
+        customRC = builtins.readFile ./init.vim; 
+        packages.nvim = with pkgs.vimPlugins; {
+          start = [
+            vim-nix
+            gruvbox
+          ];
+        };
       };
     };
 
