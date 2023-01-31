@@ -21,7 +21,7 @@ set ignorecase
 set smartcase
 
 set list
-set listchars=tab:» ,extends:›,precedes:‹,nbsp:␣,trail:•
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:•
 
-colorscheme gruvbox
 set termguicolors
+colorscheme gruvbox
