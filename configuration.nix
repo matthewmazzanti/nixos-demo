@@ -4,6 +4,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./dev-env.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -31,9 +32,7 @@
 
   # Basic environment
   environment.systemPackages = with pkgs; [
-    neovim
     wget
-    git
   ];
 
   # Enable the OpenSSH daemon.
