@@ -4,7 +4,7 @@
   };
 
   outputs = { nixpkgs, ... }: {
-    nixosConfigurations.bootstrap = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.demo = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       modules = [
         {
