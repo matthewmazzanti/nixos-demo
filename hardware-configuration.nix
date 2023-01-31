@@ -14,43 +14,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/iso" =
-    { device = "/dev/disk/by-uuid/1980-01-01-00-00-00-00";
-      fsType = "iso9660";
-    };
-
-  fileSystems."/nix/.ro-store" =
-    { device = "/iso/nix-store.squashfs";
-      fsType = "squashfs";
-      options = [ "loop" ];
-    };
-
-  fileSystems."/nix/.rw-store" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/nix/store" =
-    { device = "overlay";
-      fsType = "overlay";
-    };
-
-  fileSystems."/mnt" =
-    { device = "/dev/disk/by-uuid/372258cb-1e8f-4570-b9af-42d0bfb1a233";
+    { device = "/dev/disk/by-uuid/544cb1f9-932d-4663-932c-adc2ba83f063";
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/boot" =
-    { device = "/dev/disk/by-uuid/37B8-9F74";
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/9E6B-B886";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/e46915de-e684-4814-8f26-249e2f2778a9"; }
+    [ { device = "/dev/disk/by-uuid/24ade18d-838d-4159-9e94-671ceefb1be2"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
