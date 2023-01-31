@@ -24,6 +24,9 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     initialHashedPassword = "$6$FG1kjCgAXNEVQFMu$nllG3t93Qd8vcGBbho8yc8cHibLzwe5/nMCTcdJfrNvZHxlopxt4r6dyS28NSM90.4gQdgEvLwNTu0TYOiR7D.";
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB4h5HZCnD2uFkpb8Z/pPQKXrtdV5YU3DG1w+9rOyddy mmazzanti@beta.xi"
+    ];
   };
 
   # Basic environment
@@ -34,7 +37,12 @@
   ];
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    permitRootLogin = false;
+    passwordAuthentication = false;
+    kbdInteractiveAuthentication = false;
+  };
 
   # Required for mutable file compatibility
   system.stateVersion = "22.11";
